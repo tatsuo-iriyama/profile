@@ -6,11 +6,15 @@
     </p>
 </div>
 
+<?php // TODO: 遷移しようとした時、ログイン判定処理を追加する ?>
+<?php // ログインしていなければ、ログインフォームに遷移させる。 ?>
 <div class="profile-link-block">
     <?php // TODO: プロフィールへのリンクを貼る ?>
     <p class="profile-link-block_profile-btn">profileを見る</p>
 </div>
 
+<?php // TODO: 遷移しようとした時、ログイン判定処理を追加する ?>
+<?php // ログインしていなければ、ログインフォームに遷移させる。 ?>
 <div class="orther-list-block">
     <div class="orther-list-block_detail" data-element-id="first-contents-block">
         <?php // TODO: Qiitaのマイページへの遷移リンク作成 ?>
