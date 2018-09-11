@@ -10,7 +10,9 @@
 <?php // ログインしていなければ、ログインフォームに遷移させる。 ?>
 <div class="profile-link-block">
     <?php // TODO: プロフィールへのリンクを貼る ?>
-    <p class="profile-link-block_profile-btn">profileを見る</p>
+    <a href="/profile">
+        <p class="profile-link-block_profile-btn">profileを見る</p>
+    </a>
 </div>
 
 <?php // TODO: 遷移しようとした時、ログイン判定処理を追加する ?>
