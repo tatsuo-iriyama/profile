@@ -35,10 +35,7 @@
     <?= $this->fetch('content') ?>
 
     <footer>
-        <div>
-            <?php // TODO: 問い合わせフォーム作成 ?>
-            <h2>footer</h2>
-        </div>
+        <?= $this->element('footer') ?>
     </footer>
 </body>
 </html>
