@@ -43,6 +43,34 @@ class AppController extends Controller
 
         $this->loadComponent('RequestHandler');
         $this->loadComponent('Flash');
+
+        // 認証
+        // $this->loadComponent('Auth', [
+        //     'authenticate' => [
+        //         'Form' => [
+        //             'fields' => [
+        //                 'username' => 'email',
+        //                 'password' => 'password_hash'
+        //             ]
+        //         ],
+        //     ],
+        //     // ログイン時に遷移するアクション
+        //     'loginAction' => [
+        //         'controller' => 'Login',
+        //         'action' => 'index',
+        //     ],
+        //     // ログイン後に遷移するアクション
+        //     'loginRedirect' => [
+        //         'controller' => 'Profile',
+        //         'action' => 'index'
+        //     ],
+        //     // ログアウト後に遷移するアクション
+        //     'logoutRedirect' => [
+        //         'controller' => 'Root',
+        //         'action' => 'index',
+        //     ],
+        //     'authError' => __('メールアドレスとパスワードを入力してください。')
+        // ]);
     }
 
     /**

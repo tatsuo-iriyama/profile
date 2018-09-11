@@ -51,7 +51,8 @@ class PagesController extends AppController
         if (!empty($path[1])) {
             $subpage = $path[1];
         }
-        $this->set(compact('page', 'subpage'));
+        $cakeDescription = 'CakePHP: the rapid development php framework';
+        $this->set(compact('page', 'subpage', 'cakeDescription'));
 
         try {
             $this->render(implode('/', $path));

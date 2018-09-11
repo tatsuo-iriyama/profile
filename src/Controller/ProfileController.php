@@ -6,9 +6,9 @@ use App\Controller\AppController;
 
 
 /**
-* RootController
+* ProfileController
 */
-class RootController extends AppController
+class ProfileController extends AppController
 {
     public function index()
     {
