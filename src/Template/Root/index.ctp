@@ -1,5 +1,5 @@
 <div class="top-page-block">
-    <h1 class="top-page-block_title">ガッツ系エンジニア</h1>
+    <h1 class="top-page-block_title"><?php // ガッツ系エンジニア ?></h1>
     <p class="top-page-block_sub-title">
         やればできる。<br>
         異色の経歴からエンジニアになるまでを紹介します。

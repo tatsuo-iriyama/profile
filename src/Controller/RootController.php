@@ -12,6 +12,6 @@ class RootController extends AppController
 {
     public function index()
     {
-        $this->render('/');
+        $this->render('index');
     }
 }

@@ -18,10 +18,6 @@
 <head>
     <?= $this->Html->charset() ?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>
-        <?= $cakeDescription ?>:
-        <?= $this->fetch('title') ?>
-    </title>
     <?= $this->Html->meta('icon') ?>
 
     <?= $this->fetch('meta') ?>
@@ -33,10 +29,12 @@
     <header>
         <div>
             <?php // TODO: TOPページへの遷移リンク作成 ?>
+            <?php // TODO: ログインフォームでは左に持ってくる。(トップページでは、センターに表示) ?>
             <h2>〜Profile〜</h2>
         </div>
         <div>
             <?php // TODO: ログインフォーム作成 ?>
+            <?php // TODO: ログインフォームへ遷移させる。ログインフォームでは表示させない。 ?>
             <h2>ログイン</h2>
         </div>
     </header>
