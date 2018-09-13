@@ -10,7 +10,7 @@
 <?php // ログインしていなければ、ログインフォームに遷移させる。 ?>
 <div class="profile-link-block">
     <?php // TODO: プロフィールへのリンクを貼る ?>
-    <a href="/profile">
+    <a href="/profile/profile">
         <p class="profile-link-block_profile-btn">profileを見る</p>
     </a>
 </div>
