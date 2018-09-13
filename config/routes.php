@@ -51,9 +51,12 @@ Router::scope('/', function ($routes) {
     // top page
     $routes->connect('/', ['controller' => 'Root', 'action' => 'index']);
 
+    $routes->connect('/login', ['controller' => 'Login', 'action' => 'login']);
     $routes->connect('/logout', ['controller' => 'Login', 'action' => 'logout']);
 
     $routes->connect('/profile', ['controller' => 'Profile', 'action' => 'index']);
+
+    $routes->connect('/contact', ['controller' => 'Contact', 'action' => 'index']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.

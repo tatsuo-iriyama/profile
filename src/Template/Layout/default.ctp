@@ -30,7 +30,6 @@
         <?= $this->element('header') ?>
     </header>
 
-    <?php // TODO: 引数指定無しの場合、どんな挙動をするのか調査 ?>
     <?= $this->Flash->render() ?>
     <?= $this->fetch('content') ?>
 
