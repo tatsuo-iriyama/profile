@@ -1,18 +1,22 @@
-<div class="top-page-block">
-    <h1 class="top-page-block_title"><?php // ガッツ系エンジニア ?></h1>
-    <p class="top-page-block_sub-title">
-        やればできる。<br>
-        異色の経歴からエンジニアになるまでを紹介します。
-    </p>
-</div>
+<?= $this->Html->css('root.css'); ?>
 
-<?php // TODO: 遷移しようとした時、ログイン判定処理を追加する ?>
-<?php // ログインしていなければ、ログインフォームに遷移させる。 ?>
-<div class="profile-link-block">
-    <?php // TODO: プロフィールへのリンクを貼る ?>
-    <a href="/profile/profile">
-        <p class="profile-link-block_profile-btn">profileを見る</p>
-    </a>
+<div class="container" style="height: 700px">
+    <div class="top-page-block">
+        <h1 class="top-page-block_title">ガッツ系エンジニア</h1>
+        <p class="top-page-block_sub-title">
+            やればできる。<br>
+            異色の経歴からエンジニアになるまでを紹介。
+        </p>
+    </div>
+
+    <?php // TODO: 遷移しようとした時、ログイン判定処理を追加する ?>
+    <?php // ログインしていなければ、ログインフォームに遷移させる。 ?>
+    <div class="profile-link-block">
+        <?php // TODO: プロフィールへのリンクを貼る ?>
+        <a href="/profile/profile" class="profile-link-block_btn">
+            profileを見る
+        </a>
+    </div>
 </div>
 
 <?php // TODO: 遷移しようとした時、ログイン判定処理を追加する ?>
