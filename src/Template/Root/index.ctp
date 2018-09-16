@@ -1,8 +1,8 @@
 <?= $this->Html->css('root.css'); ?>
 
-<div class="container" style="height: 700px">
+<div class="container">
     <div class="top-page-block">
-        <h1 class="top-page-block_title">ガッツ系エンジニア</h1>
+        <h1 class="top-page-block_title">Guts Engineer</h1>
         <p class="top-page-block_sub-title">
             やればできる。<br>
             異色の経歴からエンジニアになるまでを紹介。
@@ -40,7 +40,7 @@
 
     <div class="orther-list-block_detail" data-element-id="third-contents-block">
         <?php // TODO: インターン先コーポレートサイトへのリンク作成 ?>
-        <p class="internship-block" data-element-id="internship">インターンしてます。</p>
+        <p class="internship-block" data-element-id="internship">SNSやってます。</p>
         <div class="internship-introduction">
             <?php // TODO: コーポレート、サービス、メディアの紹介 ?>
         </div>
