@@ -10,7 +10,7 @@ use Cake\Validation\Validator;
 use Cake\Network\Exception\BadRequestException;
 
 /**
-* UsersTable
+* Users Model
 */
 class UsersTable extends Table
 {
