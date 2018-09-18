@@ -16,8 +16,10 @@ class UsersTable extends Table
 {
     public function validationRegister(Validator $validation)
     {
+        // validation of name column
         $validation->notEmpty('name', '名前は必須項目です');
 
+        // validation of hash_password column
         $validation
             ->notEmpty('hash_password', 'パスワードは必須項目です')
             ->add('hash_password', [
@@ -33,10 +35,12 @@ class UsersTable extends Table
                 ]
             ]);
 
+        // validation of tell column
         $validation
             ->notEmpty('tell', '電話番号は必須項目です')
             ->numeric('tell', 'ハイフン抜きの数字のみで入力して下さい');
 
+        // validation of email column
         $validation
             ->notEmpty('email' 'メールアドレスは必須項目です')
             ->add('email', [
@@ -50,6 +54,7 @@ class UsersTable extends Table
                 ]
             ]);
 
+        // validation of postal_code column
         $validation
             ->notEmpty('postal_code', '郵便番号は必須項目です')
             ->add('postal_code', 'custom' [
@@ -59,6 +64,7 @@ class UsersTable extends Table
                 'message' => '郵便番号が正しくありません'
             ]);
 
+        // validation of address column
         $validation
             ->notEmpty('address', '住所は必須項目です');
 
