@@ -41,7 +41,8 @@ class UsersController extends AppController
 
         if (!$user) {
             // セッションから情報を取得できなかった場合
-            return throw new BadRequestException('セッションの情報を取得できませんでした');
+            throw new BadRequestException('セッションの情報を取得できませんでした');
+            return;
         }
 
         $this->set(compact('user'));
@@ -55,7 +56,8 @@ class UsersController extends AppController
 
         if (!$user) {
             // セッションから情報を取得できなかった場合
-            return throw new BadRequestException('セッションの情報を取得できませんでした');
+            throw new BadRequestException('セッションの情報を取得できませんでした');
+            return;
         }
 
         // 入力したパスワードをハッシュ化して渡す
@@ -78,7 +80,8 @@ class UsersController extends AppController
 
         if (empty($authUser)) {
             // ログインユーザーの取得ができなかった場合
-            return throw new BadRequestException('登録情報の取得ができませんでした');
+            throw new BadRequestException('登録情報の取得ができませんでした');
+            return;
         }
 
         $this->render($this->request->action, 'default');
