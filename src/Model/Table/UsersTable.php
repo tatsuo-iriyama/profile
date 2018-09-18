@@ -24,7 +24,7 @@ class UsersTable extends Table
             ->notEmpty('password', 'パスワードは必須項目です')
             ->add('password', [
                 'length' => [
-                    'rule' => ['minlength' => 7],
+                    'rule' => ['minlength', 7],
                     'message' => 'パスワードは7文字以上で入力して下さい'
                 ],
                 'alphaNumeric' => [
@@ -42,7 +42,7 @@ class UsersTable extends Table
 
         // validation of email column
         $validation
-            ->notEmpty('email' 'メールアドレスは必須項目です')
+            ->notEmpty('email', 'メールアドレスは必須項目です')
             ->add('email', [
                 'validFormat' => [
                     'rule' => 'email',
@@ -57,7 +57,7 @@ class UsersTable extends Table
         // validation of postal_code column
         $validation
             ->notEmpty('postal_code', '郵便番号は必須項目です')
-            ->add('postal_code', 'custom' [
+            ->add('postal_code', 'custom', [
                 'rule' => function ($value, $context) {
                     return (bool) preg_match('/^[0-9]{3}[0-9]{4}+$/', $value);
                 },
