@@ -12,6 +12,7 @@ class UsersController extends AppController
     public function index()
     {
         $user = $this->Users->newEntity();
+        $this->set(compact('user'));
 
         // postデータか判定
         if ($this->request->is('post')) {

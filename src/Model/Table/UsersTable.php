@@ -38,7 +38,14 @@ class UsersTable extends Table
         // validation of tell column
         $validation
             ->notEmpty('tell', '電話番号は必須項目です')
-            ->numeric('tell', 'ハイフン抜きの数字のみで入力して下さい');
+            ->add('tell', [
+                'alphaNumeric' => [
+                    'rule' => function ($value, $context) {
+                        return (bool) preg_match('/^[0-9]+$/', $value);
+                    },
+                    'message' => 'ハイフン抜きの数字のみで入力して下さい'
+                ]
+            ]);
 
         // validation of email column
         $validation
