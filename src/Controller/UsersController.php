@@ -3,6 +3,11 @@
 namespace App\Controller;
 
 use App\Controller\AppController;
+use Cake\Event\Event;
+use Cake\ORM\TableRegistry;
+use Cake\Network\Exception\BadRequestException;
+use Cake\Auth\DefaultPasswordHasher;
+use Cake\Core\Configure;
 
 /**
 * UsersController
@@ -14,8 +19,8 @@ class UsersController extends AppController
         $user = $this->Users->newEntity();
         $this->set(compact('user'));
 
-        // postデータか判定
         if ($this->request->is('post')) {
+            // POSTされたらバリデーションを実施
             // Entity作成
             $validateUser = $this->Users->newEntity($this->request->data, [
                 'validate' => 'register'
@@ -30,9 +35,23 @@ class UsersController extends AppController
 
             // 入力内容をセッションに格納
             $this->request->session()->write('registerUser', $validateUser);
+
+            // 確認画面へ
+            return $this->redirect('/Users/confirm');
         }
 
+        if ($this->request->session()->check('registerUser')) {
+            // セッションに値が存在する場合は読み込む
+            $user = $this->request->session()->read('registerUser');
+        }
+
+        // セッションに格納
+        $this->request->session()->write('registerUser', $user);
+
+        // GETされた時は入力画面へ
         $this->render($this->request->action, 'default');
+        return;
+
     }
 
     public function confirm()

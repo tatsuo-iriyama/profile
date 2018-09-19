@@ -1,5 +1,5 @@
 <div>
-    <?php $this->Form->create($user, [
+    <?= $this->Form->create($user, [
         'type' => 'post',
         'url' => [
             'action' => 'index',
@@ -74,5 +74,9 @@
                 ]) ?>
             </div>
         </div>
+        <div style="margin-top: 16px">
+            <?= $this->Form->submit(); ?>
+        </div>
     </div>
+    <?= $this->Form->end(); ?>
 </div>
