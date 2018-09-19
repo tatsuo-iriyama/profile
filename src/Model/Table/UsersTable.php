@@ -43,7 +43,7 @@ class UsersTable extends Table
                     'rule' => function ($value, $context) {
                         return (bool) preg_match('/^[0-9]+$/', $value);
                     },
-                    'message' => 'ハイフン抜きの数字のみで入力して下さい'
+                    'message' => '数字のみで入力して下さい'
                 ]
             ]);
 
@@ -55,8 +55,8 @@ class UsersTable extends Table
                     'rule' => 'email',
                     'message' => 'メールアドレスが正しくありません'
                 ],
-                'unique' => [
-                    'rule' => 'validateUnique',
+                'isUnique' => [
+                    'rule' => 'email',
                     'message' => '既に登録されているメールアドレスです'
                 ]
             ]);
