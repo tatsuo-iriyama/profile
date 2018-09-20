@@ -13,8 +13,7 @@
             <a href="users"><h2>新規登録</h2></a>
         </div>
         <div>
-            <?php // TODO: ログインフォーム作成 ?>
-            <h2>ログイン</h2>
+            <a href="login"><h2>ログイン</h2></a>
         </div>
     <?php endif; ?>
 </div>
