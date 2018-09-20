@@ -50,7 +50,7 @@ class AppController extends Controller
         //         'Form' => [
         //             'fields' => [
         //                 'username' => 'email',
-        //                 'password' => 'password_hash'
+        //                 'password' => 'password'
         //             ]
         //         ],
         //     ],
@@ -61,7 +61,7 @@ class AppController extends Controller
         //     ],
         //     // ログイン後に遷移するアクション
         //     'loginRedirect' => [
-        //         'controller' => 'Profile',
+        //         'controller' => 'Root',
         //         'action' => 'index'
         //     ],
         //     // ログアウト後に遷移するアクション

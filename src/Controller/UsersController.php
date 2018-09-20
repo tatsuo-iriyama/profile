@@ -72,7 +72,7 @@ class UsersController extends AppController
     public function save()
     {
         // 入力内容をセッションから取得
-        $user = $this->request->session->consume('registerUser');
+        $user = $this->request->session()->consume('registerUser');
 
         if (!$user) {
             // セッションから情報を取得できなかった場合
@@ -88,21 +88,24 @@ class UsersController extends AppController
             return $this->Flash->error('入力内容を保存できませんでした');
         }
 
+        // TODO: ログインフォーム作成時、コメントアウトを外す
         // 登録内容でそのままログイン
-        $this->Auth->setUser($user->toArray());
-        $this->redirect('Users/complete');
+        // $this->Auth->setUser($user->toArray());
+        $this->redirect('/Users/complete');
     }
 
     public function complete()
     {
+        // TODO: ログインフォーム作成時、コメントアウトを外す
         // ログインユーザー情報の取得
-        $authUser = $this->Auth->user();
+        // $authUser = $this->Auth->user();
 
-        if (empty($authUser)) {
-            // ログインユーザーの取得ができなかった場合
-            throw new BadRequestException('登録情報の取得ができませんでした');
-            return;
-        }
+        // TODO: ログインフォーム作成時、コメントアウトを外す
+        // if (empty($authUser)) {
+        //     // ログインユーザーの取得ができなかった場合
+        //     throw new BadRequestException('登録情報の取得ができませんでした');
+        //     return;
+        // }
 
         $this->render($this->request->action, 'default');
     }
