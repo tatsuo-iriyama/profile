@@ -10,7 +10,7 @@
         <h1>ログイン画面</h1>
     </div>
 
-    <div>
+    <div style="color: red">
         <?= $this->Flash->render() ?>
     </div>
 
@@ -22,7 +22,6 @@
             <?= $this->Form->input('email', [
                 'type' => 'text',
                 'label' => false,
-                'placeholder' => 'メールアドレス',
             ]) ?>
         </div>
     </div>
@@ -35,16 +34,13 @@
             <?= $this->Form->input('password', [
                 'type' => 'password',
                 'label' => false,
-                'placeholder' => 'メールアドレス'
             ]) ?>
         </div>
     </div>
 
     <div>
         <div>
-            <?= $this->Form->submit('ログイン', [
-                'class' => ''
-            ]) ?>
+            <?= $this->Form->submit() ?>
         </div>
     </div>
 
