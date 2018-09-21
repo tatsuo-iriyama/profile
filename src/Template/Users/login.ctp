@@ -1,4 +1,7 @@
 <div>
+    新規登録は<a href="users">こちら</a>
+</div>
+<div>
     <?= $this->Form->create(null, [
         'type' => 'post',
         'url' => [
@@ -31,7 +34,7 @@
             <p>パスワード</p>
         </div>
         <div>
-            <?= $this->Form->input('password', [
+            <?= $this->Form->input('password_hash', [
                 'type' => 'password',
                 'label' => false,
             ]) ?>
