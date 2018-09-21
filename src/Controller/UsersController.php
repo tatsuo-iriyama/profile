@@ -93,24 +93,21 @@ class UsersController extends AppController
             return $this->Flash->error('入力内容を保存できませんでした');
         }
 
-        // TODO: ログインフォーム作成時、コメントアウトを外す
         // 登録内容でそのままログイン
-        // $this->Auth->setUser($user->toArray());
+        $this->Auth->setUser($user->toArray());
         $this->redirect('/Users/complete');
     }
 
     public function complete()
     {
-        // TODO: ログインフォーム作成時、コメントアウトを外す
         // ログインユーザー情報の取得
-        // $authUser = $this->Auth->user();
+        $authUser = $this->Auth->user();
 
-        // TODO: ログインフォーム作成時、コメントアウトを外す
-        // if (empty($authUser)) {
-        //     // ログインユーザーの取得ができなかった場合
-        //     throw new BadRequestException('登録情報の取得ができませんでした');
-        //     return;
-        // }
+        if (empty($authUser)) {
+            // ログインユーザーの取得ができなかった場合
+            throw new BadRequestException('登録情報の取得ができませんでした');
+            return;
+        }
 
         $this->render($this->request->action, 'default');
     }
@@ -130,6 +127,8 @@ class UsersController extends AppController
                 $this->Flash->error('メールアドレス、またはパスワードが不正です。');
             }
         }
+
+        $this->render($this->request->action, 'default');
     }
 
     public function logout()
