@@ -14,6 +14,11 @@ use Cake\Core\Configure;
 */
 class UsersController extends AppController
 {
+    public function initialize()
+    {
+        parent::initialize();
+    }
+
     public function index()
     {
         $user = $this->Users->newEntity();
@@ -88,25 +93,46 @@ class UsersController extends AppController
             return $this->Flash->error('入力内容を保存できませんでした');
         }
 
-        // TODO: ログインフォーム作成時、コメントアウトを外す
         // 登録内容でそのままログイン
-        // $this->Auth->setUser($user->toArray());
+        $this->Auth->setUser($user->toArray());
         $this->redirect('/Users/complete');
     }
 
     public function complete()
     {
-        // TODO: ログインフォーム作成時、コメントアウトを外す
         // ログインユーザー情報の取得
-        // $authUser = $this->Auth->user();
+        $authUser = $this->Auth->user();
 
-        // TODO: ログインフォーム作成時、コメントアウトを外す
-        // if (empty($authUser)) {
-        //     // ログインユーザーの取得ができなかった場合
-        //     throw new BadRequestException('登録情報の取得ができませんでした');
-        //     return;
-        // }
+        if (empty($authUser)) {
+            // ログインユーザーの取得ができなかった場合
+            throw new BadRequestException('登録情報の取得ができませんでした');
+            return;
+        }
 
         $this->render($this->request->action, 'default');
+    }
+
+    public function login()
+    {
+        if ($this->request->is('post')) {
+            // POSTデータの場合、リクエスト情報を使用してユーザーの識別
+            $user = $this->Auth->identify();
+
+            if ($user) {
+                // 認証した場合、ユーザー情報を保存
+                $this->Auth->setUser($user);
+                return $this->redirect($this->Auth->redirectUrl());
+            } else {
+                // 認証できなかった場合、エラーメッセージ表示
+                $this->Flash->error('メールアドレス、またはパスワードが不正です。');
+            }
+        }
+
+        $this->render($this->request->action, 'default');
+    }
+
+    public function logout()
+    {
+        $this->request->session()->destroy();
     }
 }
