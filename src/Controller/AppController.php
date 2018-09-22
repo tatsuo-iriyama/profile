@@ -48,7 +48,7 @@ class AppController extends Controller
         $this->loadComponent('Auth', [
             // ログイン時のアクション
             'loginAction' => [
-                'controller' => 'users',
+                'controller' => 'Login',
                 'action' => 'login'
             ],
             // エラーメッセージ
@@ -64,6 +64,13 @@ class AppController extends Controller
             // セッションに格納
             'storage' => 'Session'
         ]);
+
+        $authenticateUser = '';
+        // ログインユーザーか常に確認する
+        if (!empty($this->Auth->user())) {
+            $authenticateUser = $this->Auth->user();
+        }
+        $this->set(compact('authenticateUser'));
     }
 
     /**
