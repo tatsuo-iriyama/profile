@@ -1,10 +1,8 @@
 <div>
-    新規登録は<a href="users">こちら</a>
-</div>
-<div>
     <?= $this->Form->create(null, [
         'type' => 'post',
         'url' => [
+            'controller' => 'Login'
             'action' => 'login'
         ]
     ]) ?>

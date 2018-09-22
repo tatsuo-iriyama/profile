@@ -56,7 +56,6 @@ class UsersController extends AppController
         // GETされた時は入力画面へ
         $this->render($this->request->action, 'default');
         return;
-
     }
 
     public function confirm()
@@ -110,29 +109,5 @@ class UsersController extends AppController
         }
 
         $this->render($this->request->action, 'default');
-    }
-
-    public function login()
-    {
-        if ($this->request->is('post')) {
-            // POSTデータの場合、リクエスト情報を使用してユーザーの識別
-            $user = $this->Auth->identify();
-
-            if ($user) {
-                // 認証した場合、ユーザー情報を保存
-                $this->Auth->setUser($user);
-                return $this->redirect($this->Auth->redirectUrl());
-            } else {
-                // 認証できなかった場合、エラーメッセージ表示
-                $this->Flash->error('メールアドレス、またはパスワードが不正です。');
-            }
-        }
-
-        $this->render($this->request->action, 'default');
-    }
-
-    public function logout()
-    {
-        $this->request->session()->destroy();
     }
 }
