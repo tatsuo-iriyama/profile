@@ -2,7 +2,7 @@
     <?= $this->Form->create(null, [
         'type' => 'post',
         'url' => [
-            'controller' => 'Login'
+            'controller' => 'Login',
             'action' => 'login'
         ]
     ]) ?>
@@ -32,7 +32,7 @@
             <p>パスワード</p>
         </div>
         <div>
-            <?= $this->Form->input('password_hash', [
+            <?= $this->Form->input('password', [
                 'type' => 'password',
                 'label' => false,
             ]) ?>
