@@ -84,9 +84,6 @@ class UsersController extends AppController
             return;
         }
 
-        // 入力したパスワードをハッシュ化して渡す
-        $user->password_hash = $user['password'];
-
         if (!$this->Users->save($user)) {
             // DBに格納できなかった場合
             return $this->Flash->error('入力内容を保存できませんでした');
