@@ -36,7 +36,7 @@ class LoginController extends AppController
 
     public function logout()
     {
+        // sessionの削除
         $this->request->session()->destroy();
-        debug($this->request->session()->destroy());
     }
 }
