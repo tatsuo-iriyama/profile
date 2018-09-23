@@ -43,7 +43,7 @@ class User extends Entity
     ];
 
     // パスワードをハッシュ化して格納
-    protected function _setPasswordHash($password)
+    protected function _setPassword($password)
     {
         return (new DefaultPasswordHasher)->hash($password);
     }
