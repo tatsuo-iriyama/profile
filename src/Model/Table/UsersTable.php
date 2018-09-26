@@ -19,10 +19,10 @@ class UsersTable extends Table
         // validation of name column
         $validation->notEmpty('name', '名前は必須項目です');
 
-        // validation of password column
+        // validation of password_hash column
         $validation
-            ->notEmpty('password', 'パスワードは必須項目です')
-            ->add('password', [
+            ->notEmpty('password_hash', 'パスワードは必須項目です')
+            ->add('password_hash', [
                 'length' => [
                     'rule' => ['minlength', 7],
                     'message' => 'パスワードは7文字以上で入力して下さい'

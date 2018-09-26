@@ -16,7 +16,6 @@ class UsersController extends AppController
 {
     public function initialize()
     {
-        parent::initialize();
     }
 
     public function index()
@@ -83,6 +82,8 @@ class UsersController extends AppController
             throw new BadRequestException('セッションの情報を取得できませんでした');
             return;
         }
+
+        $user->password_hash = $user['password'];
 
         if (!$this->Users->save($user)) {
             // DBに格納できなかった場合
