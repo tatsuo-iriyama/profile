@@ -28,7 +28,7 @@
         <div>
             <p>パスワード：</p>
             <div style="margin-left: 20px">
-                <?= $this->Form->input('password_hash', [
+                <?= $this->Form->input('password', [
                     'type' => 'password',
                     'label' => false
                 ]) ?>
