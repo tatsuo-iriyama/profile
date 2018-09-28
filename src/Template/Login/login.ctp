@@ -32,7 +32,7 @@
             <p>パスワード</p>
         </div>
         <div>
-            <?= $this->Form->input('password', [
+            <?= $this->Form->input('password_hash', [
                 'type' => 'password',
                 'label' => false,
             ]) ?>
