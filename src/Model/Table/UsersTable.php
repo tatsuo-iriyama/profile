@@ -2,9 +2,6 @@
 
 namespace App\Model\Table;
 
-use Cake\I18n\Date;
-use Cake\ORM\Query;
-use Cake\ORM\RulesChecker;
 use Cake\ORM\Table;
 use Cake\Validation\Validator;
 use Cake\Network\Exception\BadRequestException;
