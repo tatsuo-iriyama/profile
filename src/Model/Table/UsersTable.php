@@ -11,6 +11,11 @@ use Cake\Network\Exception\BadRequestException;
 */
 class UsersTable extends Table
 {
+    public function initialize(array $config)
+    {
+        parent::initialize($config);
+    }
+
     public function validationRegister(Validator $validation)
     {
         // validation of name column
