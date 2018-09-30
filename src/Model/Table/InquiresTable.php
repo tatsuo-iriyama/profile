@@ -8,16 +8,16 @@ use Cake\Network\Exception\BadRequestException;
 
 
 /**
-* Contacts Model
+* Inquires Model
 */
-class ContactsTable extends Table
+class InquiresTable extends Table
 {
 
     public function initialize(array $config)
     {
         parent::initialize();
 
-        $this->table('contacts');
+        $this->table('Inquires');
         $this->hasMany('users', [
             'foreignKey' => 'contact_id'
         ]);
