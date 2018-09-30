@@ -17,6 +17,7 @@ class InquiresController extends AppController
     public function initialize()
     {
         parent::initialize();
+        $this->loadModel('Inquires');
     }
 
     public function index()
@@ -82,6 +83,26 @@ class InquiresController extends AppController
 
         // 入力内容を保存する
         $this->Inquires->save($userInquires);
+        $this->render($this->request->action, 'default');
+    }
+
+    public function history()
+    {
+        $userId = $this->Auth->user()['id'];
+
+        $inquires = $this->Inquires
+            ->find()
+            ->where(['user_id' => $userId])
+            ->order(['created_at' => 'desc'])
+            ->all();
+
+        foreach ($inquires as $inquire) {
+            if (!empty($inquire)) {
+                $inquireHistories[] = $inquire;
+            }
+        }
+        $this->set(compact('inquireHistories'));
+
         $this->render($this->request->action, 'default');
     }
 }

@@ -12,6 +12,8 @@
 
     <h2>お問い合わせフォーム</h2>
 
+    <a href="history">履歴を見る</a>
+
     <?= $this->Flash->render() ?>
 
     <div>

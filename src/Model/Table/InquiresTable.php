@@ -15,9 +15,8 @@ class InquiresTable extends Table
 
     public function initialize(array $config)
     {
-        parent::initialize();
+        parent::initialize($config);
 
-        $this->table('Inquires');
         $this->hasMany('users', [
             'foreignKey' => 'contact_id'
         ]);
