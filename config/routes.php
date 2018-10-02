@@ -55,6 +55,7 @@ Router::scope('/', function ($routes) {
     $routes->connect('/logout', ['controller' => 'Login', 'action' => 'logout']);
     $routes->connect('/users', ['controller' => 'Users', 'action' => 'index']);
     $routes->connect('/inquires', ['controller' => 'Inquires', 'action' => 'index']);
+    $routes->connect('/history', ['controller' => 'Inquires', 'action' => 'history']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.
