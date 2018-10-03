@@ -12,7 +12,9 @@
 
     <h2>お問い合わせフォーム</h2>
 
-    <a href="history">履歴を見る</a>
+    <div>
+        <a href="history">履歴を見る</a>
+    </div>
 
     <?= $this->Flash->render() ?>
 
@@ -37,4 +39,8 @@
     </div>
 
     <?= $this->Form->end() ?>
+</div>
+
+<div>
+    TOPに<a href="/profile">戻る</a>
 </div>
