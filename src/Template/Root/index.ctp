@@ -1,6 +1,8 @@
 <div>
     <div>
-        <p>Qiitaやってます。</p>
+        <a href="articles">
+            <p>Qiitaやってます。</p>
+        </a>
     </div>
 
     <div>

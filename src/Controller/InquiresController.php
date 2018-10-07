@@ -96,10 +96,13 @@ class InquiresController extends AppController
             ->order(['created_at' => 'desc'])
             ->all();
 
+        if (empty($inquires)) {
+            return $this->Flash->error('お問い合わせ履歴はありません');
+        }
+
+        $inquireHistories =[];
         foreach ($inquires as $inquire) {
-            if (!empty($inquire)) {
-                $inquireHistories[] = $inquire;
-            }
+            $inquireHistories = $inquire;
         }
         $this->set(compact('inquireHistories'));
 
