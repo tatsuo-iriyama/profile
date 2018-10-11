@@ -1,6 +1,6 @@
 <div>
     <div>
-        <a href="articles/qiita">
+        <a href="articles" style="color: black" onMouseOut="this.style.color='black'" onMouseOver="this.style.color='red'">
             <p>Qiitaやってます。</p>
         </a>
     </div>
