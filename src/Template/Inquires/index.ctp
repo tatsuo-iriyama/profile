@@ -42,5 +42,5 @@
 </div>
 
 <div>
-    TOPに<a href="/profile">戻る</a>
+    TOPに<a href="/">戻る</a>
 </div>

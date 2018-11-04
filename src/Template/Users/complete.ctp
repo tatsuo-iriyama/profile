@@ -6,6 +6,6 @@
         <p>ユーザー登録が完了しました</p>
     </div>
     <div>
-        <a href="/profile">TOPへ</a>
+        <a href="/">TOPへ</a>
     </div>
 </div>

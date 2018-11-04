@@ -26,10 +26,7 @@
         </div>
 
         <div>
-            <?= $this->Html->Link('入力内容を変更する', [
-                'controller' => 'Inquires',
-                'action' => 'index'
-            ]) ?>
+            <a href="inquires">入力内容を変更する</a>
         </div>
     </div>
 

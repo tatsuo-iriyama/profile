@@ -12,6 +12,6 @@
     </div>
 
     <div>
-        <a href="index">戻る</a>
+        <a href="inquires">戻る</a>
     </div>
 </div>

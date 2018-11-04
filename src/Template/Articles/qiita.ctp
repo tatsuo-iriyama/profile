@@ -9,5 +9,5 @@
     <?php endforeach; ?>
 </div>
 <div>
-    <a href="/profile" style="color: black;">戻る</a>
+    <a href="/" style="color: black;">戻る</a>
 </div>
