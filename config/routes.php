@@ -57,6 +57,7 @@ Router::scope('/', function ($routes) {
     $routes->connect('/inquires', ['controller' => 'Inquires', 'action' => 'index']);
     $routes->connect('/history', ['controller' => 'Inquires', 'action' => 'history']);
     $routes->connect('/articles', ['controller' => 'Articles', 'action' => 'qiita']);
+    $routes->connect('/vue', ['controller' => 'Vue', 'action' => 'index']);
 
     /**
      * ...and connect the rest of 'Pages' controller's URLs.

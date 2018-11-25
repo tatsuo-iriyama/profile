@@ -6,6 +6,10 @@
     </div>
 
     <div>
+        <a href="/vue">Vue.js</a>
+    </div>
+
+    <div>
         <p>ブログやってます。</p>
     </div>
 
