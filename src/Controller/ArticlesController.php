@@ -44,4 +44,37 @@ class ArticlesController extends AppController
 
         $this->render($this->request->action, 'default');
     }
+
+    private function httpClient($accessToken, $url)
+    {
+        $http = new Client([
+            'headers' => [
+                'Authorization' => 'Bearer ' . $accessToken
+            ]
+        ]);
+
+        $response = $http->get($url);
+        return $response;
+    }
+
+        private function curl($accessToken, $url)
+    {
+        $ch = curl_init();
+
+        $options = [
+            CURLOPT_URL => $url,
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: application/json; charser=UTF-8',
+                'Authorization: Bearer ' . $accessToken
+            ],
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CUSTOMREQUEST => 'GET',
+        ];
+
+        curl_setopt_array($ch, $options);
+        $response = curl_exec($ch);
+        curl_close($ch);
+
+        return $response;
+    }
 }
